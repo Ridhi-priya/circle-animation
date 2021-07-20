@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css">
+    <title>Circle Animation</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="circle circle1"></div>
+      <div class="circle circle2"></div>
+    </div>
+      <svg>
+        <filter id="gooey">
+          <feGaussianBlur in="sourceGraphic" stdDeviation = "10"/>
+          <fecolorMatrix values="
+          1 0 0 0 0
+          0 1 0 0 0
+          0 0 1 0 0
+          0 0 0 20 -10
+          "/>
+        </filter>
+      </svg>
+  <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+    $(function(){
+      $(".container .circle").draggable()
+    })
+  </script>
+  </body>
+</html>
